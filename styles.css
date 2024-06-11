@@ -1,10 +1,10 @@
-
-/* Globális stílusok */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Kártyák stílusai */
 .card {
     transition: transform 0.3s ease;
 }
@@ -14,22 +14,20 @@ body {
 }
 
 .card figure {
-    height: 200px; /* Állítsuk be a képek magasságát egységesen */
+    height: 200px;
     overflow: hidden;
 }
 
 .card-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Képek arányos kitöltése */
+    object-fit: cover;
 }
 
-/* Képstílusok a kártyákhoz */
 .card-body {
     text-align: center;
 }
 
-/* Navbar stílusok */
 .navbar {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -45,7 +43,6 @@ body {
     color: #007BFF;
 }
 
-/* Dropdown stílusok */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -70,19 +67,8 @@ body {
     background-color: #f1f1f1;
 }
 
-/* Hero szakasz stílusai */
-.hero {
-    background-color: #e0f7fa;
-    padding: 2rem 0;
-}
-
-.hero-content {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.hero-content p {
-    font-size: 1.25rem;
-    line-height: 1.5;
+footer {
+    max-height: 100px;
+    overflow-y: hidden;
+    margin-top: auto;
 }

@@ -25,7 +25,7 @@
                     <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-42">
                         <li><a href="igazsag_tablazat.html">Igazságtáblázat</a></li>
                         <li><a href="analitikus_fa.html">Analitikus fa</a></li>
-                        <li><a href="word.html">Word</a></li>
+                        <li><a href="word.html">Szövegszerkesztés</a></li>
                         <li><a href="console_app.html">Console App</a></li>
                         <li><a href="logo_karesz.html">Logo Karesz</a></li>
                         <li><a href="oopkaresz.html">OOPKaresz</a></li>
@@ -61,26 +61,84 @@
     </header>
 
     <div class="p-6 bg-base-200 text-center">
+        <h1 class="text-4xl font-bold mb-4">Igazságtáblázat</h1>
         <div class="max-w-4xl mx-auto">
-          <p class="py-6">Az igazságtáblázatok segítségével részletesen megvizsgálhatjuk, 
-            hogy egy adott logikai kifejezés különböző bemeneti értékei milyen kimeneteket eredményeznek. 
-            Az igazságtáblázatok használatával pontosan meghatározhatjuk, 
-            hogy egy logikai állítás minden lehetséges kombináció esetén igaz vagy hamis.</p>
-          <p class="py-6">Egy ilyen táblázatból könnyen leolvasható, 
-            hogy logikai igazsággal vagy ellentmondással van-e dolgunk. 
-            Továbbá, az igazságtáblázatok segítségével eldönthetjük, 
-            hogy helyes-e a következtetés, illetve hogy két kijelentés ekvivalens-e. 
-            Ez különösen hasznos lehet a matematikai logika, a számítástechnika és az elektronika területén, 
-            ahol a pontos logikai következtetések és állítások alapvető fontosságúak.</p>
-          <p class="py-6">Az igazságtáblázatok használata egyszerűsíti a logikai kifejezések elemzését, 
-            segít a hibák felderítésében és a logikai rendszerek tervezésében is fontos szerepet játszik. 
-            Azáltal, hogy minden lehetséges bemenetet és kimenetet átláthatóan megjelenít, 
-            az igazságtáblázat átfogó képet nyújt a vizsgált logikai rendszer működéséről és tulajdonságairól.</p>
+            <p class="py-6">Az igazságtáblázatok segítségével részletesen megvizsgálhatjuk,
+                hogy egy adott logikai kifejezés különböző bemeneti értékei milyen kimeneteket eredményeznek.
+                Az igazságtáblázatok használatával pontosan meghatározhatjuk,
+                hogy egy logikai állítás minden lehetséges kombináció esetén igaz vagy hamis.</p>
+            <p class="py-6">Egy ilyen táblázatból könnyen leolvasható,
+                hogy logikai igazsággal vagy ellentmondással van-e dolgunk.
+                Továbbá, az igazságtáblázatok segítségével eldönthetjük,
+                hogy helyes-e a következtetés, illetve hogy két kijelentés ekvivalens-e.
+                Ez különösen hasznos lehet a matematikai logika, a számítástechnika és az elektronika területén,
+                ahol a pontos logikai következtetések és állítások alapvető fontosságúak.</p>
+
+            <table class="table-auto border-collapse border border-gray-400 mx-auto my-4">
+                <thead>
+                    <tr>
+                        <th class="border border-gray-300 px-4 py-2">A</th>
+                        <th class="border border-gray-300 px-4 py-2">B</th>
+                        <th class="border border-gray-300 px-4 py-2">A ∨ B</th>
+                        <th class="border border-gray-300 px-4 py-2">¬A</th>
+                        <th class="border border-gray-300 px-4 py-2">¬B</th>
+                        <th class="border border-gray-300 px-4 py-2">¬(A ∨ B)</th>
+                        <th class="border border-gray-300 px-4 py-2">(¬A ∨ ¬B)</th>
+                        <th class="border border-gray-300 px-4 py-2">¬(A ∨ B) → (¬A ∨ ¬B)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">0</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                        <td class="border border-gray-300 px-4 py-2">1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="py-6">Az igazságtáblázatok használata egyszerűsíti a logikai kifejezések elemzését,
+                segít a hibák felderítésében és a logikai rendszerek tervezésében is fontos szerepet játszik.
+                Azáltal, hogy minden lehetséges bemenetet és kimenetet átláthatóan megjelenít,
+                az igazságtáblázat átfogó képet nyújt a vizsgált logikai rendszer működéséről és tulajdonságairól.</p>
         </div>
-      </div>
-      <footer class="bg-base-100 text-center py-4">
+    </div>
+    <footer class="bg-base-100 text-center py-4" style="max-height: 100px; overflow-y: hidden;">
         <p>Forráskód elérhető a <a href="https://github.com/L3H3L/Portfolio.git" class="link">GitHub oldalon</a>.</p>
-      </footer>
+    </footer>
 </body>
 
 </html>
