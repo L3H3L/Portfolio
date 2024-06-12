@@ -1,7 +1,3 @@
-<!-- https://youtu.be/dQw4w9WgXcQ?si=o4tugajJwSRtyQHG -->
-
-
-
 <!DOCTYPE html>
 <html lang="hu" data-theme="default">
 
@@ -9,16 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólió - Bereczki Lehel - Főoldal</title>
+  <link rel="shortcut icon" type="image/x-icon" href="pngs/Rubik.ico">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="theme.js"></script>
-  <script src="styles.css"></script>
+  <script src="secret/secret.js" defer></script>
 </head>
 
 <body class="bg-base-300">
   <header class="navbar bg-base-100 sticky top-0 z-10">
     <nav class="navbar-start">
-      <a href="index.html" class="btn bg-base-150 text-xl">Főoldal</a>
+      <a class="btn bg-base-150 text-xl">Főoldal</a>
     </nav>
     <div class="navbar-end dropdown-end">
       <div class="dropdown dropdown-hover">
@@ -26,19 +23,18 @@
         <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-42">
           <li><input type="radio" name="theme-dropdown"
               class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Default"
-              value="default" /></li>
-          <li><input type="radio" name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro" value="retro" />
+              value="default" />
           </li>
           <li><input type="radio" name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Forest"
-              value="forest" /></li>
+              class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Black" value="forest" />
+          </li>
           <li><input type="radio" name="theme-dropdown"
               class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua" value="aqua" />
           </li>
           <li><input type="radio" name="theme-dropdown"
               class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Coffee"
-              value="coffee" /></li>
+              value="coffee" />
+          </li>
         </ul>
       </div>
     </div>
@@ -61,7 +57,7 @@
       class="card bg-base-100 shadow-xl transform hover:scale-105 transition-transform duration-300">
       <figure><img src="pngs/logika.jpg" alt="Word" /></figure>
       <div class="card-body">
-        <h2 class="card-title">Igazságtáblázat✅</h2>
+        <h2 class="card-title">Igazságtáblázat</h2>
         <p>Igazságtáblázat kezelés és használás.</p>
       </div>
     </a>
@@ -79,7 +75,7 @@
       class="card bg-base-100 shadow-xl transform hover:scale-105 transition-transform duration-300">
       <figure><img src="pngs/word.png" alt="Word" /></figure>
       <div class="card-body">
-        <h2 class="card-title">Word✅</h2>
+        <h2 class="card-title">Word</h2>
         <p>Dokumentumkezelési ismeretek.</p>
       </div>
     </a>
@@ -88,7 +84,7 @@
       class="card bg-base-100 shadow-xl transform hover:scale-105 transition-transform duration-300">
       <figure><img src="pngs/console_app.jpg" alt="Console App" /></figure>
       <div class="card-body">
-        <h2 class="card-title">Console App✅</h2>
+        <h2 class="card-title">Console App</h2>
         <p>Egyszerű konzolos alkalmazások.</p>
       </div>
     </a>
@@ -97,7 +93,7 @@
       class="card bg-base-100 shadow-xl transform hover:scale-105 transition-transform duration-300">
       <figure><img src="pngs/Karesz0.jpg" alt="OOPKaresz" /></figure>
       <div class="card-body">
-        <h2 class="card-title">LogoKaresz✅</h2>
+        <h2 class="card-title">LogoKaresz</h2>
         <p>C# tanulása Karesz álltal.</p>
       </div>
     </a>
@@ -106,7 +102,7 @@
       class="card bg-base-100 shadow-xl transform hover:scale-105 transition-transform duration-300">
       <figure><img src="pngs/karcsika.png" /></figure>
       <div class="card-body">
-        <h2 class="card-title">OOPKaresz✅</h2>
+        <h2 class="card-title">OOPKaresz</h2>
         <p>C# tanulása Karesz álltal.</p>
       </div>
     </a>
@@ -115,7 +111,7 @@
       class="card bg-base-100 shadow-xl transform hover:scale-105 transition-transform duration-300">
       <figure><img src="pngs/html_icon.jpg" alt="Web" /></figure>
       <div class="card-body">
-        <h2 class="card-title">Webfejlesztés✅</h2>
+        <h2 class="card-title">Webfejlesztés</h2>
         <p>Webfejlesztési alapok.</p>
       </div>
     </a>
@@ -129,7 +125,7 @@
       </div>
     </a>
   </div>
-  <footer class="bg-base-100 text-center py-4" style="max-height: 100px; overflow-y: hidden;">
+  <footer class="bg-base-100 text-center py-4">
     <p>Forráskód elérhető a <a href="https://github.com/L3H3L/Portfolio.git" class="link">GitHub oldalon</a>.</p>
   </footer>
 </body>

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólió - Bereczki Lehel - Igazságtáblázat</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../pngs/Rubik.ico">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../theme.js"></script>
-    <script src="../styles.css"></script>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="bg-base-300">
@@ -44,10 +45,7 @@
                             class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Default"
                             value="default" /></li>
                     <li><input type="radio" name="theme-dropdown"
-                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro"
-                            value="retro" /></li>
-                    <li><input type="radio" name="theme-dropdown"
-                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Forest"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Black"
                             value="forest" /></li>
                     <li><input type="radio" name="theme-dropdown"
                             class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua"
@@ -74,69 +72,74 @@
                 Ez különösen hasznos lehet a matematikai logika, a számítástechnika és az elektronika területén,
                 ahol a pontos logikai következtetések és állítások alapvető fontosságúak.</p>
 
-            <table class="table-auto border-collapse border border-gray-400 mx-auto my-4">
-                <thead>
-                    <tr>
-                        <th class="border border-gray-300 px-4 py-2">A</th>
-                        <th class="border border-gray-300 px-4 py-2">B</th>
-                        <th class="border border-gray-300 px-4 py-2">A ∨ B</th>
-                        <th class="border border-gray-300 px-4 py-2">¬A</th>
-                        <th class="border border-gray-300 px-4 py-2">¬B</th>
-                        <th class="border border-gray-300 px-4 py-2">¬(A ∨ B)</th>
-                        <th class="border border-gray-300 px-4 py-2">(¬A ∨ ¬B)</th>
-                        <th class="border border-gray-300 px-4 py-2">¬(A ∨ B) → (¬A ∨ ¬B)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">0</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="text-center bg-gray-40 p-5 rounded-lg shadow-md">
+                <div class="overflow-x-auto">
+                    <table class="table-auto border-collapse border border-gray-400 mx-auto my-4 min-w-[700px]">
+                        <thead>
+                            <tr>
+                                <th class="border border-gray-300 px-4 py-2">A</th>
+                                <th class="border border-gray-300 px-4 py-2">B</th>
+                                <th class="border border-gray-300 px-4 py-2">A ∨ B</th>
+                                <th class="border border-gray-300 px-4 py-2">¬A</th>
+                                <th class="border border-gray-300 px-4 py-2">¬B</th>
+                                <th class="border border-gray-300 px-4 py-2">¬(A ∨ B)</th>
+                                <th class="border border-gray-300 px-4 py-2">(¬A ∨ ¬B)</th>
+                                <th class="border border-gray-300 px-4 py-2">¬(A ∨ B) → (¬A ∨ ¬B)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">0</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                                <td class="border border-gray-300 px-4 py-2">1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <p class="py-6">Az igazságtáblázatok használata egyszerűsíti a logikai kifejezések elemzését,
                 segít a hibák felderítésében és a logikai rendszerek tervezésében is fontos szerepet játszik.
                 Azáltal, hogy minden lehetséges bemenetet és kimenetet átláthatóan megjelenít,
                 az igazságtáblázat átfogó képet nyújt a vizsgált logikai rendszer működéséről és tulajdonságairól.</p>
         </div>
     </div>
-    <footer class="bg-base-100 text-center py-4" style="max-height: 100px; overflow-y: hidden;">
+    <footer class="bg-base-100 text-center py-4">
         <p>Forráskód elérhető a <a href="https://github.com/L3H3L/Portfolio.git" class="link">GitHub oldalon</a>.</p>
     </footer>
 </body>

@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólió - Bereczki Lehel - Discord Bot</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../pngs/Rubik.ico">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../theme.js"></script>
-    <script src="../styles.css"></script>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="bg-base-300">
@@ -44,10 +45,7 @@
                             class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Default"
                             value="default" /></li>
                     <li><input type="radio" name="theme-dropdown"
-                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Retro"
-                            value="retro" /></li>
-                    <li><input type="radio" name="theme-dropdown"
-                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Forest"
+                            class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Black"
                             value="forest" /></li>
                     <li><input type="radio" name="theme-dropdown"
                             class="theme-controller btn btn-sm btn-block btn-ghost justify-start" aria-label="Aqua"
@@ -60,20 +58,117 @@
         </div>
     </header>
 
-    <div class="hero min-h-screen-10 bg-base-200">
+    <div class="p-6 bg-base-200 text-center">
         <h1 class="text-4xl font-bold mb-4">Rubik-Bot</h1>
-        <div class="hero-content text-center">
-            <div class="max-w-md">
-                <p class="py-6">Bereczki Lehel vagyok, és már majdnem egy teljes tanévet töltöttem a Kőbányai Szent
-                    László Gimnáziumban, ahol NyF infósként tanulok. Ebben az időszakban átfogó ismereteket szereztem a
-                    logikáról, a Word-ről, a gépi számításokról, a C#-ról, a programozási algoritmusokról és a
-                    webfejlesztés alapjairól. Emellett két osztálytársammal belevágtunk a Discord botok programozásába
-                    is. Ha többet szeretnél megtudni az iskoláról, akkor látogasd meg a <a href="https://www.szlgbp.hu"
-                        class="link">Kőbányai Szent László Gimnázium honlapját</a>.</p>
+        <div class="max-w-4xl mx-auto">
+            <p class="py-6">A Rubik-Bot egy általam fejlesztett Discord bot, amelyet Python programozási nyelven írtam.
+                Ez a bot számos interaktív funkcióval rendelkezik, mint például a kő-papír-olló játék.
+                A Rubik-Bot egyszerű parancsokkal vezérelhető, amelyeket a felhasználók a Discord
+                csatornákon keresztül adhatnak meg. A bot azonnali visszajelzést ad, és egy mappában naplózza az összes
+                aznapi parancslekérést, megjelölve, hogy melyik szerveren, melyik csatornán, mikor és ki küldte be a
+                parancsot.</p>
+
+            <p class="py-6">A kő-papír-olló játék kódja:</p>
+
+            <div class="text-left bg-gray-40 p-5 rounded-lg shadow-md overflow-x-auto">
+                <pre>
+                    <code>
+@bot.command()
+async def rps(ctx):
+    choices = ['rock', 'paper', 'scissors']
+    bot_choice = random.choice(choices)
+                            
+    message = await ctx.send("Choose one: rock, paper or scissors")
+                            
+    def check(m):
+        return m.author == ctx.author and m.content.lower() in choices
+                            
+    try:
+        player_choice = await bot.wait_for('message', timeout=60.0, check=check)
+    except TimeoutError:
+        await ctx.send("You didn't reply in time.")
+        return
+                            
+    player_choice = player_choice.content.lower()
+                                
+    if player_choice == bot_choice:
+        await ctx.send(f'Tie! You both chose: {player_choice}.')
+    elif (player_choice == 'rock' and bot_choice == 'scissors') or \
+         (player_choice == 'paper' and bot_choice == 'rock') or \
+         (player_choice == 'scissors' and bot_choice == 'paper'):
+        await ctx.send(f'Congratulations, you won!')
+        await ctx.send(f'You chose: {player_choice'})
+        await ctx.send(f'The bot chose: {bot_choice}')
+    else:
+        await ctx.send(f'Sorry, you lost!')
+        await ctx.send(f'You chose: {player_choice})
+        await ctx.send(f'The bot chose: {bot_choice}')          
+                    </code>
+                </pre>
             </div>
+
+            <p class="py-6">Így néz ki Discordon:</p>
+
+            <figure class="text-center mx-auto my-4">
+                <img src="../pngs/rps.png" alt="Kő-papír-olló" class="mx-auto" style="max-width: 100%;">
+                <figcaption class="text-center text-sm text-gray-500">Kő-papír-olló játék kinézete Discordon
+                </figcaption>
+            </figure>
+
+            <p class="py-6">A Rubik-Bot emellett számos hasznos eszközt is biztosít a Discord szerverek
+                adminisztrátorainak. Automatizált üdvözlő üzenetekkel fogadja az új tagokat, moderációs eszközöket kínál
+                a szabálysértések kezelésére, és különféle értesítéseket küldhet a szerver tagjainak. A bot integrálható
+                különböző API-kkal, így például valós idejű időjárás-jelentéseket vagy egyéb külső adatokat is
+                szolgáltathat.</p>
+
+            <p class="py-6">Az Időjárás lekérő parancs kódja:</p>
+
+            <div class="text-left bg-gray-40 p-5 rounded-lg shadow-md overflow-x-auto">
+                <pre>
+                    <code>
+@bot.command()
+async def weather(ctx, *, location):
+    params = {'q': location, 'appid': API_KEY, 'units': 'metric'}
+    response = requests.get(BASE_URL, params=params)
+    data = response.json()
+                                
+    if response.status_code == 200:
+        weather_description = data['weather'][0]['description']
+        temperature = data['main']['temp']
+        humidity = data['main']['humidity']
+        wind_speed = data['wind']['speed']
+                                    
+        await ctx.send(f'The weather in {location}:')
+        await ctx.send(f'{weather_description}')
+        await ctx.send(f'Temperature: {temperature}°C')
+        await ctx.send(f'Humidity: {humidity}%')
+        await ctx.send(f'Wind speed: {wind_speed} m/s')
+    else:
+        await ctx.send("Couldn't not query the weather for this city.")
+        await ctx.send(f'Please try again')  
+                    </code>
+                </pre>
+            </div>
+
+            <p class="py-6">Így néz ki Discordon:</p>
+
+            <figure class="text-center mx-auto my-4">
+                <img src="../pngs/weather.png" alt="Időjárás lekérdezés" class="mx-auto">
+                <figcaption class="text-center text-sm text-gray-500">Időjárás lekérdezés kinézete Discordon
+                </figcaption>
+            </figure>
+
+            <p class="py-6">A fejlesztés során különös figyelmet fordítottam arra, hogy a Rubik-Bot felhasználóbarát és
+                könnyen bővíthető legyen.</p>
+
+            <figure class="text-center mx-auto my-4">
+                <img src="../pngs/logs.png" alt="Logs mappa" class="mx-auto">
+                <figcaption class="text-center text-sm text-gray-500">Logs mappa
+                </figcaption>
+            </figure>
         </div>
     </div>
-    <footer class="bg-base-100 text-center py-4" style="max-height: 100px; overflow-y: hidden;">
+    <footer class="bg-base-100 text-center py-4">
         <p>Forráskód elérhető a <a href="https://github.com/L3H3L/Portfolio.git" class="link">GitHub oldalon</a>.</p>
     </footer>
 </body>
