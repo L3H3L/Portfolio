@@ -41,12 +41,6 @@ body {
     display: block;
 }
 
-footer {
-    max-height: 100px;
-    overflow-y: hidden;
-    margin-top: auto;
-}
-
 img {
     min-height: 100%;
     max-width: 100%;
